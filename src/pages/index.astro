@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="HANDCRAFTED in africa" active="">
+  <section class="hero">
+    <h1>New arrivals, simplified.</h1>
+    <p>
+      A clean Astro storefront inspired by revolve.com layout patterns: category nav, tight product grid,
+      fast pages, and a minimal cart.
+    </p>
+  </section>
+
+  <div class="toolbar">
+    <div class="search" aria-label="Site search (demo)">
+      <span>🔎</span>
+      <input placeholder="Search (demo UI)" />
+    </div>
+    <div class="pills">
+      <a class="pill" href="/clothing">Clothing</a>
+      <a class="pill" href="/sculptures">Sculptures</a>
+      <a class="pill" href="/jewelry">Jewelry</a>
+      <a class="pill" href="/cart">Cart 🛒</a>
+    </div>
+  </div>
+
+  <div class="small">
+    This starter is static + client-side cart. Add a real checkout later (Stripe/Snipcart/Shopify).
+  </div>
+</BaseLayout>

@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductGrid from "../components/ProductGrid.astro";
+import { products } from "../components/data/products.js";
+
+const category = "Clothing";
+const list = products.filter((p) => p.category === category);
+---
+
+<BaseLayout title="Clothing — HANDCRAFTED in africa" active="/clothing">
+  <section class="hero">
+    <h1>Clothing</h1>
+    <p>Clean fits, neutral palette, fast add-to-cart.</p>
+  </section>
+
+  <ProductGrid products={list} />
+</BaseLayout>

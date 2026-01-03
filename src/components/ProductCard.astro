@@ -1,0 +1,23 @@
+---
+const { product } = Astro.props;
+---
+
+<article class="card">
+  <img class="thumb" src={product.image} alt={product.title} loading="lazy" />
+  <div class="cardBody">
+    <div class="titleRow">
+      <div class="productTitle">{product.title}</div>
+      <div class="price">${product.price}</div>
+    </div>
+    <div class="meta">
+      <span>{product.brand}</span>
+      <span>•</span>
+      <span>{product.category}</span>
+    </div>
+
+    <div class="btnRow">
+      <button class="btn primary" data-add-to-cart={JSON.stringify(product)}>Add to Cart</button>
+      <a class="btn" href="/cart">Cart 🛒</a>
+    </div>
+  </div>
+</article>

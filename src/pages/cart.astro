@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CartClient from "../components/CartClient.jsx";
+---
+
+<BaseLayout title="Cart 🛒 — HANDCRAFTED in africa" active="/cart">
+  <section class="hero">
+    <h1>Cart 🛒</h1>
+    <p>Client-side demo cart stored in your browser.</p>
+  </section>
+
+  <CartClient client:load />
+</BaseLayout>

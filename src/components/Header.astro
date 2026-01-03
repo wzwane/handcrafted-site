@@ -1,0 +1,31 @@
+---
+import CartBadge from "./CartBadge.jsx";
+const { active = "" } = Astro.props;
+
+const links = [
+  { href: "/clothing", label: "Clothing" },
+  { href: "/sculptures", label: "Sculptures" },
+  { href: "/jewelry", label: "Jewelry" },
+  { href: "/cart", label: "Cart 🛒", isCart: true },
+];
+---
+
+<header class="topbar">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="/">
+        <span class="brandDot"></span>
+        <span>HANDCRAFTED</span>
+      </a>
+
+      <nav class="links" aria-label="Primary">
+        {links.map((l) => (
+          <a class={l.href === active ? "active" : ""} href={l.href}>
+            {l.label}
+            {l.isCart && <CartBadge client:load />}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</header>

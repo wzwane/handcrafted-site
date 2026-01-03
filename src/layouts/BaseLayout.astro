@@ -1,0 +1,24 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../assets/styles/global.css";
+
+const { title = "HANDCRAFTED in africa", active = "" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="Simplified revolve-style storefront built with Astro." />
+  </head>
+  <body>
+    <Header active={active} />
+    <main class="container">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

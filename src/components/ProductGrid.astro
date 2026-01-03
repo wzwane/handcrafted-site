@@ -1,0 +1,23 @@
+---
+import ProductCard from "./ProductCard.astro";
+const { products } = Astro.props;
+---
+
+<section class="grid" id="product-grid">
+  {products.map((p) => <ProductCard product={p} />)}
+</section>
+
+<script>
+  // Minimal cart handler (no framework) for product pages
+  import { addToCart } from "../components/cart.js";
+
+  const buttons = document.querySelectorAll("[data-add-to-cart]");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const product = JSON.parse(btn.getAttribute("data-add-to-cart"));
+      addToCart(product, 1);
+      btn.textContent = "Added ✓";
+      setTimeout(() => (btn.textContent = "Add to Cart"), 900);
+    });
+  });
+</script>
