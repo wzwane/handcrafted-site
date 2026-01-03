@@ -5,5 +5,8 @@ import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact()]
+  integrations: [preact()],
+  site: 'https://www.wzwane.github.io',
+  base: '/handcrafted',
+   trailingSlash: "never"
 });
