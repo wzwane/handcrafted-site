@@ -1,1 +1,0 @@
-import{b as e}from"./cart.Dvl0-vft.js";const o=document.querySelectorAll("[data-add-to-cart]");o.forEach(t=>{t.addEventListener("click",()=>{const d=JSON.parse(t.getAttribute("data-add-to-cart"));e(d,1),t.textContent="Added ✓",setTimeout(()=>t.textContent="Add to Cart",900)})});
